@@ -16,3 +16,10 @@ vihicle=("car" "bus" "cycle")
 for item in "${vihicle[@]}"; do
 echo $item
 done
+
+echo "========================"
+
+movie=("pushpa" "luckybashkar" "babraba")
+for item in "${movie[@]}"; do
+echo $item
+done
