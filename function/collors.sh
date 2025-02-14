@@ -30,5 +30,5 @@ if [ $? -ne 0 ]; then
     if [ $? -ne 0 ];then
     validate $1 "installing mysql"
 else 
-    echo -e " $1 $Y installed already $N"
+    echo -e "$1 $Y installed already $N"
 fi 
