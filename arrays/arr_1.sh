@@ -5,4 +5,4 @@ Movie=("Ajay" "Ajju" "Ajji")
 echo "First movie: ${Movie[0]}"
 echo "Number of movies passes : ${#Movie[@]}"
 echo "Printing all movies: ${Movie[*]}"
-echo "printing file name: ${Movie[?]}"
+echo "printing file name: $0"
