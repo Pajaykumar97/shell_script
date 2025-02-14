@@ -52,7 +52,7 @@ validate $? "change the directory"
 unzip /tmp/frontend.zip &>>$log_name
 validate $? "unzip the frontend code"
 
-cp /home/ec2-user/shell_script/expense_project/frontend.service /etc/nginx/default.d/expense.conf &>>$log_name
+cp /home/ec2-user/shell_script/expense_project/expense.conf /etc/nginx/default.d/expense.conf &>>$log_name
 validate $? "copying the code"
 
 systemctl restart nginx &>>$log_name
