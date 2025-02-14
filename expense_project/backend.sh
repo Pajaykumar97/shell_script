@@ -74,10 +74,10 @@ validate $? "setting up schema"
 systemctl daemon-reload &>>$log_name
 validate $? "reloading"
  
-systemctl start backend.service &>>$log_name
-validate $? "started backend"
+systemctl enable backend &>>$log_name
+validate $? "enabling backend"
 
-systemctl restart backend.service &>>$log_name
+systemctl restart backend&>>$log_name
 validate $? "restarted the backend"
 
 
