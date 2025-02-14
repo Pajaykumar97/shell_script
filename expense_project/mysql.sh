@@ -40,7 +40,7 @@ validate $? "enabling mysql server"
 systemctl start mysqld &>>$log_name
 validate $? "started the mysqld"
 
-mysql -h mysql.proawsdevops.fun -u root -p ExpenseApp@1 -e 'show databases;' &>>$log_name
+mysql -h mysql.proawsdevops.fun -u root -pExpenseApp@1 -e 'show databases;' &>>$log_name
 if [ $? -ne 0 ];then
     mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$log_name
     validate $? "setting root password"
