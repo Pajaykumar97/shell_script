@@ -38,6 +38,6 @@ for package in $@; do
             dnf install $package -y &>>$log_name
             validate $? "$package installing"
         else
-            echo -e "$Y $pacakge already installed $N"
+            echo -e "$Y $pacakge is already installed $N"
         fi
 done
