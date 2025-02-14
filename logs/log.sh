@@ -32,12 +32,12 @@ check_root () {
 
 check_root
 
-for packages in $@; do
-    dnf list installed $packages &>>$log_name
+for package in $@; do
+    dnf list installed $package &>>$log_name
         if [ $? -ne 0 ];then
-            dnf install $packages -y &>>$log_name
-            validate $? "$packages installing"
+            dnf install $package -y &>>$log_name
+            validate $? "$package installing"
         else
-            echo -e "$Y $packges already installed $N"
+            echo -e "$Y $pacakge already installed $N"
         fi
 done
