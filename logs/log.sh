@@ -35,7 +35,7 @@ check_root
 for package in $@; do
     dnf list installed $package &>>$log_name
         if [ $? -ne 0 ];then
-            dnf install $package -y &>>$log_name
+            dnf install $package -y
             validate $? "$package installing"
         else
             echo -e "$Y $pacakge is already installed $N"
