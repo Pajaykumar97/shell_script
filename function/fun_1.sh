@@ -27,3 +27,11 @@ if [ $? -ne 0 ];then
 else
     echo "$1 already installed"
 fi
+
+dnf list installed git
+if [ $? -ne 0 ];then
+    dnf install git -y
+    validate $1 "installing git"
+else
+    echo "already git instlled"
+fi 
