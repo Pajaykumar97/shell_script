@@ -12,7 +12,7 @@ timestamp=$(date +%h-%m-%d-%H-%M-%s)
 log_name="$log_folder-$log_file/$timestamp.log"
 
 validate () {
-    if [ $1 -ne 0];then
+    if [ $1 -ne 0 ];then
         echo -e "$2 $R installing ...filure $N"
         exit 1
     else
