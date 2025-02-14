@@ -7,9 +7,9 @@ Y="\e[33m"
 N="\e[0m"
 
 log_folder="/var/log/expenses-log"
-log_file=$(echo $0 | cut -d "." -f1)
+log_file=$(echo $0 | cut -d "." -f1 )
 timestamp=$(date +%h-%m-%d-%H-%M-%s)
-log_name="$log_folder-$log_file/$timestamp.log"
+log_name="$log_folder/$log_file-$timestamp.log"
 
 validate () {
     if [ $1 -ne 0 ];then
@@ -31,7 +31,7 @@ echo "Executing the code $timestamp" &>>$log_name
 
 check_root
 
-dnf install mysql-srever -y &>>$log_name
+dnf install mysql-server -y &>>$log_name
 validate $? "installing mysql"
 
 systemctl enable mysqld &>>$log_name
