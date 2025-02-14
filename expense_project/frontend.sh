@@ -31,29 +31,29 @@ echo "Executing the code $timestamp" &>>$log_name
 
 check_root
 
-dnf install nginx -y
+dnf install nginx -y &>>$log_name
 validate $? "installing nginx"
 
-systemctl enable nginx 
+systemctl enable nginx &>>$log_name
 validate $? "enabling nginx"
 
-systemctl start nginx
+systemctl start nginx &>>$log_name
 validate $? "started the nginx"
 
-rm -rf /usr/share/nginx/html/*
+rm -rf /usr/share/nginx/html/* &>>$log_name
 validate $? "remove the existing files in html"
 
-curl -o /tmp/frontend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
+curl -o /tmp/frontend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip &>>$log_name
 validate $? "downloading the frontend code"
 
-cd /usr/share/nginx/html
+cd /usr/share/nginx/html &>>$log_name
 validate $? "change the directory"
 
-unzip /tmp/frontend.zip
+unzip /tmp/frontend.zip &>>$log_name
 validate $? "unzip the frontend code"
 
-cp /home/ec2-user/shell_script/expense_project/frontend.service /etc/nginx/default.d/expense.conf
+cp /home/ec2-user/shell_script/expense_project/frontend.service /etc/nginx/default.d/expense.conf &>>$log_name
 validate $? "copying the code"
 
-systemctl restart nginx
+systemctl restart nginx &>>$log_name
 validate $? "restarted the nginx"
