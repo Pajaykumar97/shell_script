@@ -4,4 +4,4 @@ read user_name
 echo "Enter you password"
 read -s password
 
-echo "Password Entered"
+echo "$user_name Password Entered"
