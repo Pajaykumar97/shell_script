@@ -40,7 +40,7 @@ validate $? "enabling nodejs 20"
 dnf install nodejs -y &>>$log_name
 validate $? "installing nodejs"
 
-id expense
+id expense &>>$log_name
 if [ $? -ne 0 ]; then
     useradd expense &>>$log_name
     validate $? "user adding"
@@ -77,7 +77,7 @@ validate $? "reloading"
 systemctl start backend &>>$log_name
 validate $? "started backend"
 
-systemctl restart the backend &>>$log_name
+systemctl restart backend &>>$log_name
 validate $? "restarted the backend"
 
 
