@@ -4,7 +4,7 @@
 echo "Enter the number :"
 read num
 
-if [ $num / 2 == 0 ]; then
+if [ $num / 2 -ne 0 ]; then
     echo "Given number is even"
 elif [ $num -ne 0 ]; then
     echo "please enter correct number"
