@@ -16,7 +16,7 @@ validate () {
     fi
 }
 
-log_folder="var/log/packages.log"
+log_folder="/var/log/packages.log"
 log_file=$(echo $0 | cut -d "." -f1)
 timestamp=$(date +%y-%m-%d-%H-%M-%S)
 log_name="$log_folder/$log_file-$timestamp.log"
